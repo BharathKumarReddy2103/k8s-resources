@@ -12,5 +12,4 @@ spec:
         cpu: "100m"
       limits: # hard limit
         memory: "128Mi"
-        cpu: "150m"
-        
+        cpu: "150m"  
