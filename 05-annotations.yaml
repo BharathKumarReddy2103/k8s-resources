@@ -14,4 +14,3 @@ spec:
   containers:
   - name: nginx
     image: nginx
-    
