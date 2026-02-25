@@ -6,7 +6,6 @@ provisioner: efs.csi.aws.com
 reclaimPolicy: Retain 
 parameters:
   provisioningMode: efs-ap
-  fileSystemId: fs-06bcfe4d1ab2aae96
+  fileSystemId: fs-036c1e82a2db91b05
   directoryPerms: "700"
   basePath: "/roboshop" # /roboshop/cart
-  
