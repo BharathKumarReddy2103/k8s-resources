@@ -6,6 +6,6 @@ metadata:
     purpose: config
     env: dev
 data:
-  COURSE: "DevSecOps with AWS"
-  DURATION: "120HRS"
-  TRAINER: "BHARATH KUMAR REDDY N."
+  COURSE: "DevOps with AWS"
+  DURATION: "135HRS"
+  TRAINER: "BHARATH KUMAR REDDY NARAHARI"
