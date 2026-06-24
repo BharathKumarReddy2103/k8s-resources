@@ -24,27 +24,27 @@ spec:
   resources:
     requests:
       storage: 15Gi
-# ---
-# apiVersion: v1
-# kind: Pod
-# metadata:
-#   name: nginx
-#   labels:
-#     purpose: ebs-static-demo
-#     project: roboshop
-# spec:
-#   nodeSelector:
-#     topology.kubernetes.io/zone: us-east-1c
-#   containers:
-#   - name: nginx
-#     image: nginx
-#     volumeMounts: # docker run -v host-path:container-path
-#     - name: persistent-storage
-#       mountPath: /usr/share/nginx/html
-#   volumes:
-#   - name: persistent-storage
-#     persistentVolumeClaim:
-#       claimName: ebs-static
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    purpose: ebs-static-demo
+    project: roboshop
+spec:
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1c
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts: # docker run -v host-path:container-path
+    - name: persistent-storage
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: ebs-static
 # ---
 # apiVersion: v1
 # kind: Service
