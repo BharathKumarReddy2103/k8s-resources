@@ -45,20 +45,20 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: ebs-static
-# ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: ebs-static
-#   labels:
-#     purpose: ebs-static-demo
-#     project: roboshop
-# spec:
-#   type: LoadBalancer
-#   selector:
-#     purpose: ebs-static-demo
-#     project: roboshop
-#   ports:
-#     - protocol: TCP
-#       port: 80 # service port
-#       targetPort: 80 # container port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ebs-static
+  labels:
+    purpose: ebs-static-demo
+    project: roboshop
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: ebs-static-demo
+    project: roboshop
+  ports:
+    - protocol: TCP
+      port: 80 # service port
+      targetPort: 80 # container port
