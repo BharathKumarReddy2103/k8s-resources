@@ -25,39 +25,39 @@ spec:
   resources:
     requests:
       storage: 5Gi
-# ---
-# apiVersion: v1
-# kind: Pod
-# metadata:
-#   name: nginx
-#   labels:
-#     purpose: efs-static-demo
-#     project: roboshop
-# spec:
-#   containers:
-#   - name: nginx
-#     image: nginx
-#     volumeMounts: # docker run -v host-path:container-path
-#     - name: persistent-storage
-#       mountPath: /usr/share/nginx/html
-#   volumes:
-#   - name: persistent-storage
-#     persistentVolumeClaim:
-#       claimName: efs-static
-# ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: efs-static
-#   labels:
-#     purpose: efs-static-demo
-#     project: roboshop
-# spec:
-#   type: LoadBalancer
-#   selector:
-#     purpose: efs-static-demo
-#     project: roboshop
-#   ports:
-#     - protocol: TCP
-#       port: 80 # service port
-#       targetPort: 80 # container port
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    purpose: efs-static-demo
+    project: roboshop
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts: # docker run -v host-path:container-path
+    - name: persistent-storage
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: efs-static
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: efs-static
+  labels:
+    purpose: efs-static-demo
+    project: roboshop
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: efs-static-demo
+    project: roboshop
+  ports:
+    - protocol: TCP
+      port: 80 # service port
+      targetPort: 80 # container port
