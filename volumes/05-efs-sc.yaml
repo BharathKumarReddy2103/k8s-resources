@@ -9,3 +9,4 @@ parameters:
   fileSystemId: fs-036c1e82a2db91b05
   directoryPerms: "700"
   basePath: "/roboshop" # /roboshop/cart
+  
